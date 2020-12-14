@@ -7,7 +7,7 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
   router: {
-    base: '/tekken-combo-maker/'
+    base: '/tcm-dist/'
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
