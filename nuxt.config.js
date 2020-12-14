@@ -6,7 +6,9 @@ export default {
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-
+  router: {
+    base: '/tekken-combo-maker/'
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - tekken-combo-maker',
