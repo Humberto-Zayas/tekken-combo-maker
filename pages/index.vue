@@ -56,13 +56,16 @@
         <template>
           <v-container class="grey">
             Combo Preview
-            <div ref="printMe" id="combo-row">
+            <div id="combo-row">
               
-              <img
-                v-for="(item, index) in selected"
-                :key="index"
-                :src="item.src"
-              />
+              <span style="display: inline-block" class="combo-container" ref="printMe">
+                <img
+                  style="margin-right: 2px;"
+                  v-for="(item, index) in selected"
+                  :key="index"
+                  :src="item.src"
+                />
+              </span>
             </div>
           </v-container>
         </template>
@@ -76,7 +79,7 @@
             <!-- OUTPUT -->
             <div>
               Combo Download
-              <img ref="output" style="width: 100%" :src="output" />
+              <img ref="output" style="max-width: 100%" :src="output" />
             </div>
 
           </v-container>
@@ -85,6 +88,15 @@
     </v-col>
   </v-row>
 </template>
+
+<style>
+
+/* #combo-row {
+  overflow: scroll;
+}
+
+.combo-container { width: 3000px !important; display: block } */
+</style>
 
 <script>
 export default {
@@ -137,6 +149,46 @@ export default {
           command: "ub"
         },
         {
+          src: "/inputs/tek_arrow_hb.svg",
+          name: "hold back",
+          command: "B"
+        },
+        {
+          src: "/inputs/tek_arrow_hdb.svg",
+          name: "hold down back",
+          command: "DB"
+        },
+        {
+          src: "/inputs/tek_arrow_hd.svg",
+          name: "hold down",
+          command: "D"
+        },
+        {
+          src: "/inputs/tek_arrow_hdf.svg",
+          name: "hold down forward",
+          command: "DF"
+        },
+        {
+          src: "/inputs/tek_arrow_hf.svg",
+          name: "hold forward",
+          command: "F"
+        },
+        {
+          src: "/inputs/tek_arrow_huf.svg",
+          name: "hold up forward",
+          command: "UF"
+        },
+        {
+          src: "/inputs/tek_arrow_hu.svg",
+          name: "hold up",
+          command: "U"
+        },
+        {
+          src: "/inputs/tek_arrow_hub.svg",
+          name: "hold up back",
+          command: "UB"
+        },
+        {
           src: "/inputs/tek_sep_grn.svg",
           name: "separator",
           command: ","
@@ -145,6 +197,31 @@ export default {
           src: "/inputs/tek_arrow_n.svg",
           name: "neutral",
           command: "*"
+        },
+        {
+          src: "/inputs/dash.svg",
+          name: "dash",
+          command: "Dash"
+        },
+        {
+          src: "/inputs/ws.svg",
+          name: "while standing",
+          command: "WS"
+        },
+        {
+          src: "/inputs/fc.svg",
+          name: "full crouch",
+          command: "FC"
+        },
+        {
+          src: "/inputs/ss.svg",
+          name: "Side Step",
+          command: "ss"
+        },
+        {
+          src: "/inputs/wr.svg",
+          name: "While Running",
+          command: "WR"
         },
         {
           src: "/inputs/tek_button_1.svg",
@@ -196,6 +273,56 @@ export default {
           name: "34",
           command: "3+4"
         },
+        {
+          src: "/inputs/tek_immediately-after.svg",
+          name: "immediately after",
+          command: "~"
+        },
+        {
+          src: "/inputs/just-frame.svg",
+          name: "Just Frame",
+          command: ":"
+        },
+        {
+          src: "/inputs/tail-spin-fr.svg",
+          name: "tail spin",
+          command: "tail spin"
+        },
+        {
+          src: "/inputs/tek_backturn-01.svg",
+          name: "back turn",
+          command: "back turn"
+        },
+        {
+          src: "/inputs/ch.svg",
+          name: "full crouch",
+          command: "FC"
+        },
+        {
+          src: "/inputs/wallsplat.svg",
+          name: "Wall Splat",
+          command: "wall splat"
+        },
+        {
+          src: "/inputs/wallbreak.svg",
+          name: "Wall Break",
+          command: "wall break"
+        },
+        {
+          src: "/inputs/floorbreak.svg",
+          name: "Floor Break",
+          command: "floor break"
+        },
+        {
+          src: "/inputs/during-ltwst.svg",
+          name: "Left Twist",
+          command: "Left Twist"
+        },
+        {
+          src: "/inputs/during-rtwst.svg",
+          name: "Right Twist",
+          command: "Right Twist"
+        },
       ],
     };
   },
@@ -222,6 +349,8 @@ export default {
         scale: 20,
       };
       this.output = await this.$html2canvas(el, options);
+
+      
     },
     async clear() {
       const el = this.$refs.output;
