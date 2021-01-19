@@ -1,24 +1,59 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="8">
+    <v-col cols="12" sm="9" md="9">
       <v-card>
+         <v-card-title class="headline"> Create a combo </v-card-title>
         <v-row no-gutters>
-          <v-col md="5" sm="12" cols="12">
+          <!-- <v-col md="5" sm="12" cols="12">
             <v-card-title class="headline"> Create a combo </v-card-title>
+          </v-col> -->
+          <v-col md="5" style="padding: 10px 20px">
+            <v-select
+              v-model="value"
+              :items="items"
+              attach
+              chips
+              label="Characters"
+              multiple
+          ></v-select>
           </v-col>
-          <v-col class="d-flex align-center justify-space-around">
+          <v-col md="7" style="padding: 10px" class="d-flex align-center justify-space-around">
             <v-btn @click="clear">Clear&nbsp;&nbsp;<v-icon>mdi-delete</v-icon></v-btn>
             <v-btn @click="selected.pop()">Undo&nbsp;&nbsp;<v-icon>mdi-undo</v-icon></v-btn>
             <v-btn @click="print">Generate&nbsp;&nbsp;<v-icon>mdi-cloud-download</v-icon></v-btn>
           </v-col>
         </v-row>
+        <!-- <v-row style="padding: 0em 1em">
+         
+          <v-col offset-sm="6" sm="6">
+            <v-select
+              v-model="value"
+              :items="items"
+              attach
+              chips
+              label="Characters"
+              multiple
+          ></v-select>
+          </v-col>
+        </v-row> -->
 
         <template>
           <v-container class="grey">
-            <v-row no-gutters>
-              <v-col v-for="(n, index) in inputs" :key="index">
+            <v-row class="command-row" no-gutters>
+              <v-col v-for="(n, index) in inputs" :key="n.src">
                 <v-card class="grey" outlined tile>
                   <img @click="selected.push(n)" :src="n.src" />
+                </v-card>
+                
+              </v-col>
+              <v-col v-if="value.includes('Lucky Chloe')" v-for="(l, index) in luckychloe" :key="l.src">
+                  <v-card class="grey" outlined tile>
+                    <img @click="selected.push(l)" :src="l.src" />
+                </v-card>
+              </v-col>
+              <v-col v-if="value.includes('Zafina')" v-for="(z, index) in zafina" :key="z.src">
+                  <v-card class="grey" outlined tile>
+                    <img @click="selected.push(z)" :src="z.src" />
                 </v-card>
               </v-col>
             </v-row>
@@ -91,6 +126,10 @@
 
 <style>
 
+.command-row .col {
+  flex-grow: 0;
+}
+
 /* #combo-row {
   overflow: scroll;
 }
@@ -102,6 +141,9 @@
 export default {
   data() {
     return {
+      value: '',
+      show: false,
+      items: ['Lucky Chloe','Zafina'],
       command: "",
     //   description: "California is a state in the western United States",
     //   rules: [(v) => v.length <= 25 || "Max 25 characters"],
@@ -313,17 +355,41 @@ export default {
           name: "Floor Break",
           command: "floor break"
         },
+      ],
+      luckychloe: [
         {
           src: "/inputs/during-ltwst.svg",
           name: "Left Twist",
-          command: "Left Twist"
+          command: "Left Twist",
+          character: "Lucky Chloe"
         },
         {
           src: "/inputs/during-rtwst.svg",
           name: "Right Twist",
-          command: "Right Twist"
+          command: "Right Twist",
+          character: "Lucky Chloe"
         },
       ],
+      zafina: [
+        {
+          src: "/inputs/scarecrow.svg",
+          name: "Scarecrow",
+          command: "scarecrow",
+          character: "Zafina"
+        },
+        {
+          src: "/inputs/mantis.svg",
+          name: "Mantis",
+          command: "Mantis",
+          character: "Zafina"
+        },
+        {
+          src: "/inputs/tarantula.svg",
+          name: "Tarantula",
+          command: "trt",
+          character: "Zafina"
+        },
+      ]
     };
   },
   methods: {
