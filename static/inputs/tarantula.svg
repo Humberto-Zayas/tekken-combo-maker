@@ -1,0 +1,77 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="32" height="31.99" viewBox="0 0 32 31.99">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #40ccd0;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill-opacity: 0;
+      }
+
+      .cls-2, .cls-4 {
+        stroke: #000;
+      }
+
+      .cls-4 {
+        stroke-width: 0.5px;
+      }
+
+      .cls-5 {
+        fill: #ecdb33;
+      }
+
+      .cls-6 {
+        fill: #3f5554;
+      }
+
+      .cls-7 {
+        fill: #3251c0;
+      }
+
+      .cls-8 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <path id="c1lSHusfI" class="cls-1" d="M8.5,16.41C4.36,16.41,1,13.33,1,9.53S4.36,2.66,8.5,2.66,16,5.74,16,9.53,12.64,16.41,8.5,16.41Z" transform="translate(0 0)"/>
+      <path id="c1lSHusfI-2" data-name="c1lSHusfI" class="cls-2" d="M8.5,16.41C4.36,16.41,1,13.33,1,9.53S4.36,2.66,8.5,2.66,16,5.74,16,9.53,12.64,16.41,8.5,16.41Z" transform="translate(0 0)"/>
+    </g>
+    <g>
+      <path id="cxjjA1190" class="cls-3" d="M8.5,15.31A6.07,6.07,0,0,1,2.19,9.53,6.07,6.07,0,0,1,8.5,3.75a6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,8.5,15.31Z" transform="translate(0 0)"/>
+      <path id="cxjjA1190-2" data-name="cxjjA1190" class="cls-4" d="M8.5,15.31A6.07,6.07,0,0,1,2.19,9.53,6.07,6.07,0,0,1,8.5,3.75a6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,8.5,15.31Z" transform="translate(0 0)"/>
+    </g>
+    <g>
+      <path id="a9nD95wn" class="cls-5" d="M23.5,15C19.36,15,16,12,16,8.16s3.36-6.88,7.5-6.88S31,4.36,31,8.16,27.64,15,23.5,15Z" transform="translate(0 0)"/>
+      <path id="a9nD95wn-2" data-name="a9nD95wn" class="cls-2" d="M23.5,15C19.36,15,16,12,16,8.16s3.36-6.88,7.5-6.88S31,4.36,31,8.16,27.64,15,23.5,15Z" transform="translate(0 0)"/>
+    </g>
+    <g>
+      <path id="b2HbEi674W" class="cls-3" d="M23.5,13.94a6.07,6.07,0,0,1-6.31-5.78A6.07,6.07,0,0,1,23.5,2.38a6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,23.5,13.94Z" transform="translate(0 0)"/>
+      <path id="b2HbEi674W-2" data-name="b2HbEi674W" class="cls-4" d="M23.5,13.94a6.07,6.07,0,0,1-6.31-5.78A6.07,6.07,0,0,1,23.5,2.38a6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,23.5,13.94Z" transform="translate(0 0)"/>
+    </g>
+    <g>
+      <path id="b2WcRpcLCB" class="cls-6" d="M8.5,30.72c-4.14,0-7.5-3.08-7.5-6.88S4.36,17,8.5,17,16,20.05,16,23.84,12.64,30.72,8.5,30.72Z" transform="translate(0 0)"/>
+      <path id="b2WcRpcLCB-2" data-name="b2WcRpcLCB" class="cls-2" d="M8.5,30.72c-4.14,0-7.5-3.08-7.5-6.88S4.36,17,8.5,17,16,20.05,16,23.84,12.64,30.72,8.5,30.72Z" transform="translate(0 0)"/>
+    </g>
+    <g>
+      <path id="c1la0ENz2l" class="cls-3" d="M8.5,29.62a6.07,6.07,0,0,1-6.31-5.78A6.07,6.07,0,0,1,8.5,18.06a6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,8.5,29.62Z" transform="translate(0 0)"/>
+      <path id="c1la0ENz2l-2" data-name="c1la0ENz2l" class="cls-4" d="M8.5,29.62a6.07,6.07,0,0,1-6.31-5.78A6.07,6.07,0,0,1,8.5,18.06a6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,8.5,29.62Z" transform="translate(0 0)"/>
+    </g>
+    <g>
+      <path id="l1osqn9Lb" class="cls-6" d="M23.5,29.34c-4.14,0-7.5-3.08-7.5-6.87s3.36-6.88,7.5-6.88S31,18.67,31,22.47,27.64,29.34,23.5,29.34Z" transform="translate(0 0)"/>
+      <path id="l1osqn9Lb-2" data-name="l1osqn9Lb" class="cls-2" d="M23.5,29.34c-4.14,0-7.5-3.08-7.5-6.87s3.36-6.88,7.5-6.88S31,18.67,31,22.47,27.64,29.34,23.5,29.34Z" transform="translate(0 0)"/>
+    </g>
+    <g>
+      <path id="aocZHFv4F" class="cls-3" d="M23.5,28.25a6.07,6.07,0,0,1-6.31-5.78,6.07,6.07,0,0,1,6.31-5.78,6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,23.5,28.25Z" transform="translate(0 0)"/>
+      <path id="aocZHFv4F-2" data-name="aocZHFv4F" class="cls-4" d="M23.5,28.25a6.07,6.07,0,0,1-6.31-5.78,6.07,6.07,0,0,1,6.31-5.78,6.07,6.07,0,0,1,6.31,5.78A6.07,6.07,0,0,1,23.5,28.25Z" transform="translate(0 0)"/>
+    </g>
+  </g>
+  <rect class="cls-7" width="32" height="31.99" rx="1.72"/>
+  <g>
+    <path class="cls-8" d="M11.4,12.78H8.61v8.38h-2V12.78H3.8V10.84h7.6Z" transform="translate(0 0)"/>
+    <path class="cls-8" d="M16.12,17.58H14.57v3.58h-2V10.84h4.13a3.42,3.42,0,0,1,3.44,3.42,3.37,3.37,0,0,1-2,3l2.29,3.89H18.2Zm-1.55-1.79h2.09a1.48,1.48,0,0,0,1.41-1.53,1.46,1.46,0,0,0-1.41-1.52H14.57Z" transform="translate(0 0)"/>
+    <path class="cls-8" d="M28.2,12.78H25.41v8.38h-2V12.78H20.6V10.84h7.6Z" transform="translate(0 0)"/>
+  </g>
+</svg>
