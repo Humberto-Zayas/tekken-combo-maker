@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="9" md="9">
+    <v-col cols="12" sm="8" md="8">
       <v-card>
          <v-card-title class="headline"> Create a combo </v-card-title>
         <v-row no-gutters>

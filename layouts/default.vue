@@ -1,6 +1,8 @@
 <template>
   <v-app dark>
     <v-navigation-drawer
+    src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
+      class="navi-drawer"
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -25,16 +27,21 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
+      src="https://tk7.tekken.com/assets/images/fighters-final/dragunov-standard/home-desktop.png"
+      shrink-on-scroll
+      prominent
+      fade-img-on-scroll
       :clipped-left="clipped"
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon class="align-self-end" @click.stop="drawer = !drawer" />
       <v-btn
+        class="align-self-end"
         icon
         @click.stop="miniVariant = !miniVariant"
       >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
+        <v-icon >mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
       <!-- <v-btn
         icon
@@ -83,10 +90,25 @@
       :absolute="!fixed"
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <v-col sm="11">
+        <span>&copy; {{ new Date().getFullYear() }}</span>
+      </v-col>
+      <v-col>
+        <i class="fab fa-twitter"></i>
+      </v-col>
+      <v-col>
+        <i class="fab fa-paypal"></i>
+      </v-col>
+      
     </v-footer>
   </v-app>
 </template>
+
+<style>
+.navi-drawer .v-list {
+  padding: 0;
+}
+</style>
 
 <script>
 export default {
