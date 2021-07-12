@@ -11,12 +11,12 @@ export default {
   // },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - tekken-combo-maker',
-    title: 'tekken-combo-maker',
+    titleTemplate: 'Tekken Combo Maker',
+    title: 'Tekken combo Maker',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Generate high quality PNG files of your favorite characters Tekken combos' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
