@@ -16,6 +16,7 @@
               attach
               chips
               label="Characters"
+              @change="updateBackground(value)"
             />
           </v-col>
           <v-col
@@ -439,6 +440,9 @@ export default {
     }
   },
   methods: {
+    updateBackground (value) {
+      this.$store.commit('CHANGE_APP_BAR_BACKGROUND', value)
+    },
     checkCommand (command) {
       const inputs = this.inputs
       const selected = this.selected

@@ -38,15 +38,21 @@ export default {
     // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics'
   ],
-
+  googleAnalytics: {
+    id: 'UA-34078204-8'
+  },
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['nuxt-cookie-control', {
+      controlButton: false
+    }]
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
