@@ -27,14 +27,37 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      src="https://tk7.tekken.com/assets/images/fighters-final/dragunov-standard/home-desktop.png"
-
+      :src="'/background/' + currentCharacter + '.png'"
+      height="200"
       prominent
       fade-img-on-scroll
       :clipped-left="clipped"
       fixed
       app
     >
+      <template v-slot:img="{ props }">
+        <transition name="fade">
+          <v-img
+            :key="currentCharacter"
+            v-bind="props"
+            position="center 15%"
+            gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.0)"
+          >
+            <template v-slot:placeholder>
+              <v-row
+                class="fill-height ma-0"
+                align="center"
+                justify="center"
+              >
+                <v-progress-circular
+                  indeterminate
+                  color="grey lighten-5"
+                />
+              </v-row>
+            </template>
+          </v-img>
+        </transition>
+      </template>
       <v-app-bar-nav-icon class="align-self-end" @click.stop="drawer = !drawer" />
       <v-btn
         class="align-self-end"
@@ -100,6 +123,12 @@
         <i class="fab fa-paypal" />
       </v-col>
     </v-footer>
+    <CookieControl>
+      <template v-slot:bar>
+        <h3>Cookies</h3>
+        <p>This site uses Google Analytics to view bounce rate and pages viewed.</p>
+      </template>
+    </CookieControl>
   </v-app>
 </template>
 
@@ -132,6 +161,11 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Tekken 7 Combo Maker'
+    }
+  },
+  computed: {
+    currentCharacter () {
+      return this.$store.state.character
     }
   }
 }
