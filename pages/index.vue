@@ -60,9 +60,24 @@
                   <img :src="n.src" @click="selected.push(n)">
                 </v-card>
               </v-col>
+              <v-col v-for="(z, index) in akuma" v-if="value.includes('Akuma')" :key="z.src">
+                <v-card class="grey" outlined tile>
+                  <img :src="z.src" @click="selected.push(z)">
+                </v-card>
+              </v-col>
               <v-col v-for="j in josie" v-if="value.includes('Josie')" :key="j.src">
                 <v-card class="grey" outlined tile>
                   <img :src="j.src" @click="selected.push(j)">
+                </v-card>
+              </v-col>
+              <v-col v-for="j in kunimitsu" v-if="value.includes('Kunimitsu')" :key="j.src">
+                <v-card class="grey" outlined tile>
+                  <img :src="j.src" @click="selected.push(j)">
+                </v-card>
+              </v-col>
+              <v-col v-for="l in lee" v-if="value.includes('Lee')" :key="l.src">
+                <v-card class="grey" outlined tile>
+                  <img :src="l.src" @click="selected.push(l)">
                 </v-card>
               </v-col>
               <v-col v-for="l in luckychloe" v-if="value.includes('Lucky Chloe')" :key="l.src">
@@ -71,11 +86,6 @@
                 </v-card>
               </v-col>
               <v-col v-for="(z, index) in zafina" v-if="value.includes('Zafina')" :key="z.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="z.src" @click="selected.push(z)">
-                </v-card>
-              </v-col>
-              <v-col v-for="(z, index) in akuma" v-if="value.includes('Akuma')" :key="z.src">
                 <v-card class="grey" outlined tile>
                   <img :src="z.src" @click="selected.push(z)">
                 </v-card>
@@ -169,12 +179,16 @@
 </style>
 
 <script>
+
+import characters from '~/mixins/characters.js'
+
 export default {
+  mixins: [characters],
   data () {
     return {
       value: '',
       show: false,
-      items: ['Josie', 'Lucky Chloe', 'Zafina', 'Akuma'],
+
       command: '',
       //   description: "California is a state in the western United States",
       //   rules: [(v) => v.length <= 25 || "Max 25 characters"],
@@ -385,56 +399,6 @@ export default {
           src: '/inputs/floorbreak.svg',
           name: 'Floor Break',
           command: 'floor break'
-        }
-      ],
-      josie: [
-        {
-          src: '/inputs/switchstance.svg',
-          name: 'Switch Stance',
-          command: 'SWS',
-          character: 'Josie'
-        }
-      ],
-      luckychloe: [
-        {
-          src: '/inputs/during-ltwst.svg',
-          name: 'Left Twist',
-          command: 'Left Twist',
-          character: 'Lucky Chloe'
-        },
-        {
-          src: '/inputs/during-rtwst.svg',
-          name: 'Right Twist',
-          command: 'Right Twist',
-          character: 'Lucky Chloe'
-        }
-      ],
-      zafina: [
-        {
-          src: '/inputs/scarecrow.svg',
-          name: 'Scarecrow',
-          command: 'scarecrow',
-          character: 'Zafina'
-        },
-        {
-          src: '/inputs/mantis.svg',
-          name: 'Mantis',
-          command: 'Mantis',
-          character: 'Zafina'
-        },
-        {
-          src: '/inputs/tarantula.svg',
-          name: 'Tarantula',
-          command: 'trt',
-          character: 'Zafina'
-        }
-      ],
-      akuma: [
-        {
-          src: '/inputs/ex.svg',
-          name: 'EX',
-          command: 'EX',
-          character: 'Akuma'
         }
       ]
     }
