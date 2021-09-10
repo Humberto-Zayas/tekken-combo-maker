@@ -1,6 +1,113 @@
 export default {
   data () {
     return {
+      characters: [
+        {
+          name: 'Akuma',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: '1, 1 F+2+3'
+            },
+            {
+              name: 'Super',
+              command: 'qcf, qcf+1+2'
+            }
+          ]
+        },
+        {
+          name: 'Asuka',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: 'df+1+2'
+            },
+            {
+              name: 'Rage Drive',
+              command: 'ff+1+2'
+            }
+          ]
+        },
+        {
+          name: 'Josie',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: 'df+1+2'
+            },
+            {
+              name: 'Rage Drive',
+              command: 'ff+1+2'
+            }
+          ]
+        },
+        {
+          name: 'Kunimitsu',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: 'df+1+2'
+            },
+            {
+              name: 'Rage Drive',
+              command: 'ff+1+2'
+            }
+          ]
+        },
+        {
+          name: 'Lee Chaolan',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: 'd+1+2'
+            },
+            {
+              name: 'Rage Drive',
+              command: 'df+3+4'
+            }
+          ]
+        },
+        {
+          name: 'Lucky Chloe',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: '3+4'
+            },
+            {
+              name: 'Rage Drive',
+              command: 'df+3+4'
+            }
+          ]
+        },
+        {
+          name: 'Xiaoyu',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: 'df+1+2'
+            },
+            {
+              name: 'Rage Drive',
+              command: 'ff+1+2'
+            }
+          ]
+        },
+        {
+          name: 'Zafina',
+          rage: [
+            {
+              name: 'Rage Art',
+              command: 'df+3+4'
+            },
+            {
+              name: 'Rage Drive',
+              command: 'f+2+3'
+            }
+          ]
+        }
+
+      ],
       items: ['Akuma', 'Asuka', 'Josie', 'Kunimitsu', 'Lee Chaolan', 'Lucky Chloe', 'Xiaoyu', 'Zafina'],
       akuma: [
         {
@@ -119,6 +226,14 @@ export default {
         }
 
       ]
+    }
+  },
+  computed: {
+    characterSelect () {
+      const x = this.characters
+      const y = _.map(x, 'name') // [12, 14, 16, 18]
+
+      return y
     }
   }
 }

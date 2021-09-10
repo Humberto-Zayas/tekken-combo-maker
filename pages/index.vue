@@ -19,7 +19,7 @@
                 <v-col lg="5" md="5" sm="4" cols="12" style="padding: 10px 20px">
                   <v-select
                     v-model="value"
-                    :items="items"
+                    :items="characterSelect"
                     attach
                     chips
                     label="Characters"
