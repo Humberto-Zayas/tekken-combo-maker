@@ -1,156 +1,206 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" md="10" lg="8">
-      <v-card>
-        <v-card-title class="headline">
-          Create a combo
-        </v-card-title>
-        <v-row no-gutters>
-          <!-- <v-col md="5" sm="12" cols="12">
-            <v-card-title class="headline"> Create a combo </v-card-title>
-          </v-col> -->
-          <v-col lg="5" md="5" sm="4" cols="12" style="padding: 10px 20px">
-            <v-select
-              v-model="value"
-              :items="items"
-              attach
-              chips
-              label="Characters"
-              @change="updateBackground(value)"
-            />
-          </v-col>
-          <v-col
-            lg="7"
-            md="7"
-            sm="8"
-            cols="12"
-            style="padding: 10px"
-            class="d-flex align-center justify-space-around"
-          >
-            <v-btn @click="clear">
-              <span class="d-none d-sm-flex">Clear&nbsp;&nbsp;</span><v-icon>mdi-delete</v-icon>
-            </v-btn>
-            <v-btn @click="selected.pop()">
-              <span class="d-none d-sm-flex">Undo&nbsp;&nbsp;</span><v-icon>mdi-undo</v-icon>
-            </v-btn>
-            <v-btn @click="print">
-              <span class="d-none d-sm-flex">Generate&nbsp;&nbsp;</span><v-icon>mdi-cloud-download</v-icon>
-            </v-btn>
-          </v-col>
-        </v-row>
-        <!-- <v-row style="padding: 0em 1em">
+  <v-row justify="center" align="top">
+    <v-col cols="12" md="9" lg="9">
+      <v-expansion-panels>
+        <v-expansion-panel v-model="panel">
+          <v-expansion-panel-header elevation-12>
+            <v-card>
+              <v-card-title class="headline">
+                Create a combo
+              </v-card-title>
+            </v-card>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-card>
+              <!-- <v-card-title class="headline">
+                Create a combo
+              </v-card-title> -->
+              <v-row no-gutters>
+                <v-col lg="5" md="5" sm="4" cols="12" style="padding: 10px 20px">
+                  <v-select
+                    v-model="value"
+                    :items="items"
+                    attach
+                    chips
+                    label="Characters"
+                    @change="updateBackground(value)"
+                  />
+                </v-col>
+                <v-col
+                  lg="7"
+                  md="7"
+                  sm="8"
+                  cols="12"
+                  style="padding: 10px"
+                  class="d-flex align-center justify-space-around"
+                >
+                  <v-btn @click="clear">
+                    <span class="d-none d-sm-flex">Clear&nbsp;&nbsp;</span><v-icon>mdi-delete</v-icon>
+                  </v-btn>
+                  <v-btn @click="selected.pop()">
+                    <span class="d-none d-sm-flex">Undo&nbsp;&nbsp;</span><v-icon>mdi-undo</v-icon>
+                  </v-btn>
+                  <v-btn @click="print">
+                    <span class="d-none d-sm-flex">Generate&nbsp;&nbsp;</span><v-icon>mdi-cloud-download</v-icon>
+                  </v-btn>
+                </v-col>
+              </v-row>
 
-          <v-col offset-sm="6" sm="6">
-            <v-select
-              v-model="value"
-              :items="items"
-              attach
-              chips
-              label="Characters"
-              multiple
-          ></v-select>
-          </v-col>
-        </v-row> -->
-
-        <template>
-          <v-container class="grey">
-            <v-row class="command-row" no-gutters>
-              <v-col v-for="(n, index) in inputs" :key="n.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="n.src" @click="selected.push(n)">
-                </v-card>
-              </v-col>
-              <v-col v-for="(z, index) in akuma" v-if="value.includes('Akuma')" :key="z.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="z.src" @click="selected.push(z)">
-                </v-card>
-              </v-col>
-              <v-col v-for="j in josie" v-if="value.includes('Josie')" :key="j.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="j.src" @click="selected.push(j)">
-                </v-card>
-              </v-col>
-              <v-col v-for="j in kunimitsu" v-if="value.includes('Kunimitsu')" :key="j.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="j.src" @click="selected.push(j)">
-                </v-card>
-              </v-col>
-              <v-col v-for="l in lee" v-if="value.includes('Lee')" :key="l.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="l.src" @click="selected.push(l)">
-                </v-card>
-              </v-col>
-              <v-col v-for="l in luckychloe" v-if="value.includes('Lucky Chloe')" :key="l.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="l.src" @click="selected.push(l)">
-                </v-card>
-              </v-col>
-              <v-col v-for="(z, index) in zafina" v-if="value.includes('Zafina')" :key="z.src">
-                <v-card class="grey" outlined tile>
-                  <img :src="z.src" @click="selected.push(z)">
-                </v-card>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <template>
-                  <v-form>
-                    <v-container>
-                      <v-row>
-                        <v-col cols="12" sm="12">
-                          <v-text-field
-                            v-model="command"
-                            class="grey"
-                            filled
-                            clearable
-                            disabled
-                            label="Type Commands (Ex: f*df2) – Coming soon"
-                            @change="checkCommand(command)"
-                          />
-                        </v-col>
-                      </v-row>
-                      <!-- <v-row>
+              <template>
+                <v-container class="grey">
+                  <v-row class="command-row" no-gutters>
+                    <v-col v-for="(n, index) in inputs" :key="n.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="n.src" @click="selected.push(n)">
+                      </v-card>
+                    </v-col>
+                    <v-col v-for="(z, index) in akuma" v-if="value.includes('Akuma')" :key="z.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="z.src" @click="selected.push(z)">
+                      </v-card>
+                    </v-col>
+                    <v-col v-for="j in josie" v-if="value.includes('Josie')" :key="j.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="j.src" @click="selected.push(j)">
+                      </v-card>
+                    </v-col>
+                    <v-col v-for="j in kunimitsu" v-if="value.includes('Kunimitsu')" :key="j.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="j.src" @click="selected.push(j)">
+                      </v-card>
+                    </v-col>
+                    <v-col v-for="l in lee" v-if="value.includes('Lee-Chaolan')" :key="l.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="l.src" @click="selected.push(l)">
+                      </v-card>
+                    </v-col>
+                    <v-col v-for="l in luckychloe" v-if="value.includes('Lucky Chloe')" :key="l.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="l.src" @click="selected.push(l)">
+                      </v-card>
+                    </v-col>
+                    <v-col v-for="l in xiaoyu" v-if="value.includes('Xiaoyu')" :key="l.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="l.src" @click="selected.push(l)">
+                      </v-card>
+                    </v-col>
+                    <v-col v-for="(z, index) in zafina" v-if="value.includes('Zafina')" :key="z.src">
+                      <v-card class="grey" outlined tile>
+                        <img :src="z.src" @click="selected.push(z)">
+                      </v-card>
+                    </v-col>
+                  </v-row>
+                  <v-row no-gutters>
+                    <v-col>
+                      <template>
+                        <v-form>
+                          <v-container>
+                            <v-row>
+                              <v-col cols="12" sm="12">
+                                <v-text-field
+                                  v-model="command"
+                                  class="grey"
+                                  filled
+                                  clearable
+                                  disabled
+                                  label="Type Commands (Ex: f*df2) – Coming soon"
+                                  @change="checkCommand(command)"
+                                />
+                              </v-col>
+                            </v-row>
+                          <!-- <v-row>
                           {{command}}
                       </v-row> -->
-                    </v-container>
-                  </v-form>
+                          </v-container>
+                        </v-form>
+                      </template>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </template>
+
+              <v-card-title class="headline">
+                Output
+              </v-card-title>
+
+              <template>
+                <v-container class="grey">
+                  Combo Preview
+                  <div id="combo-row">
+                    <span ref="printMe" style="display: inline-block" class="combo-container">
+                      <img
+                        v-for="(item, index) in selected"
+                        :key="index"
+                        style="margin-right: 2px;"
+                        :src="item.src"
+                      >
+                    </span>
+                  </div>
+                </v-container>
+              </template>
+              <template>
+                <v-container class="grey darken-1">
+                  <div>
+                    Combo Download
+                    <img ref="output" style="max-width: 100%" :src="output">
+                  </div>
+                </v-container>
+              </template>
+            </v-card>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-col>
+    <v-col align="top" lg="3" md="3" cols="12">
+      <v-card>
+        <v-list-item class="pa-0 ma-0 pink darken-2">
+          <v-list-item-avatar>
+            <v-img max-height="1000" contain src="/background/lucky chloe.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title class="headline" v-text="value.replace('-', ' ')" />
+          </v-list-item-content>
+        </v-list-item>
+
+        <!-- <v-card-title class="headline">
+          {{ value.replace('-', ' ') }}
+        </v-card-title> -->
+        <template>
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                Rage
+              </v-expansion-panel-header>
+              <v-expansion-panel-content class="pa-0 ma-0">
+                <template>
+                  <v-simple-table class="pa-0 ma-0">
+                    <template v-slot:default class="pa-0 ma-0">
+                      <!-- <thead>
+                        <tr>
+                          <th class="text-left">
+                            Rage
+                          </th>
+                          <th class="text-left">
+                            Command
+                          </th>
+                        </tr>
+                      </thead> -->
+                      <tbody>
+                        <tr
+                          v-for="item in luckychloeRage"
+                          :key="item.name"
+                          class="pa-0 ma-0"
+                        >
+                          <td>{{ item.name }}</td>
+                          <td>{{ item.command }}</td>
+                        </tr>
+                      </tbody>
+                    </template>
+                  </v-simple-table>
                 </template>
-              </v-col>
-            </v-row>
-          </v-container>
-        </template>
-
-        <v-card-title class="headline">
-          Output
-        </v-card-title>
-
-        <template>
-          <v-container class="grey">
-            Combo Preview
-            <div id="combo-row">
-              <span ref="printMe" style="display: inline-block" class="combo-container">
-                <img
-                  v-for="(item, index) in selected"
-                  :key="index"
-                  style="margin-right: 2px;"
-                  :src="item.src"
-                >
-              </span>
-            </div>
-          </v-container>
-        </template>
-        <template>
-          <v-container class="grey darken-1">
-            <!-- SOURCE -->
-            <!-- <div  style="padding: 10px; background: #f5da55">
-                <h1 style="color: #000; ">Print me!</h1>
-                </div> -->
-            <!-- OUTPUT -->
-            <div>
-              Combo Download
-              <img ref="output" style="max-width: 100%" :src="output">
-            </div>
-          </v-container>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </template>
       </v-card>
     </v-col>
@@ -186,9 +236,9 @@ export default {
   mixins: [characters],
   data () {
     return {
-      value: '',
+      value: 'Lucky Chloe',
       show: false,
-
+      panel: [0],
       command: '',
       //   description: "California is a state in the western United States",
       //   rules: [(v) => v.length <= 25 || "Max 25 characters"],

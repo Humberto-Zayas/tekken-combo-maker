@@ -1,7 +1,7 @@
 export default {
   data () {
     return {
-      items: ['Akuma', 'Asuka', 'Josie', 'Kunimitsu', 'Lee', 'Lucky Chloe', 'Zafina'],
+      items: ['Akuma', 'Asuka', 'Josie', 'Kunimitsu', 'Lee Chaolan', 'Lucky Chloe', 'Xiaoyu', 'Zafina'],
       akuma: [
         {
           src: '/inputs/ex.svg',
@@ -68,6 +68,26 @@ export default {
           character: 'Lucky Chloe'
         }
       ],
+      xiaoyu: [
+        {
+          src: '/inputs/aop.svg',
+          name: 'AOP',
+          command: 'AOP',
+          character: 'Xiaoyu'
+        },
+        {
+          src: '/inputs/rds.svg',
+          name: 'RDS',
+          command: 'RDS',
+          character: 'Xiaoyu'
+        },
+        {
+          src: '/inputs/hyp.svg',
+          name: 'Hypnosis',
+          command: 'Hypnosis',
+          character: 'Xiaoyu'
+        }
+      ],
       zafina: [
         {
           src: '/inputs/scarecrow.svg',
@@ -87,6 +107,17 @@ export default {
           command: 'trt',
           character: 'Zafina'
         }
+      ],
+      luckychloeRage: [
+        {
+          name: 'Rage Art',
+          command: '3+4'
+        },
+        {
+          name: 'Rage Drive',
+          command: 'df+3+4'
+        }
+
       ]
     }
   }
