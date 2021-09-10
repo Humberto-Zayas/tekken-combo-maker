@@ -234,6 +234,12 @@ export default {
       const y = _.map(x, 'name') // [12, 14, 16, 18]
 
       return y
+    },
+    characterRage () {
+      const x = this.characters
+      const y = this.value
+      const z = _.map(x, item => ({ rage: item.rage }))
+      return z
     }
   }
 }
