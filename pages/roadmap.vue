@@ -2,16 +2,17 @@
   <v-row>
     <v-col class="text-center">
       <template>
-        
         <v-card
           class="mx-auto"
           max-width="500"
           tile
         >
-        <v-card-title class="headline">Road Map</v-card-title>
-        <v-card-text>
-          Upcoming additions and updates for the site
-        </v-card-text>
+          <v-card-title class="headline">
+            Road Map
+          </v-card-title>
+          <v-card-text>
+            Upcoming additions and updates for the site
+          </v-card-text>
           <v-list rounded>
             <!-- <v-subheader>REPORTS</v-subheader> -->
             <v-list-item-group
@@ -23,10 +24,10 @@
                 :key="i"
               >
                 <v-list-item-icon>
-                  <v-icon v-text="item.icon"></v-icon>
+                  <v-icon v-text="item.icon" />
                 </v-list-item-icon>
                 <v-list-item-content>
-                  <v-list-item-title v-text="item.text"></v-list-item-title>
+                  <v-list-item-title v-text="item.text" />
                 </v-list-item-content>
               </v-list-item>
             </v-list-item-group>
@@ -39,7 +40,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       selectedItem: 0,
       items: [
@@ -49,7 +50,10 @@ export default {
         { text: 'Add various input icon and color options', icon: 'mdi-flag' },
         { text: 'Website style overhaul to fit Tekken themes', icon: 'mdi-flag' },
         { text: 'Add ability to include meta info (damage, subtitle, etc)', icon: 'mdi-flag' },
-      ],
+        { text: 'Key characer info on sidebar', icon: 'mdi-flag' },
+        { text: 'All character and stance icons in combo maker', icon: 'mdi-flag' },
+        { text: 'Various character and game info pages', icon: 'mdi-flag' }
+      ]
     }
   }
 }

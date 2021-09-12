@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center" align="top">
+  <v-row justify="center" align="top" class="pl-5 pr-5">
     <v-col cols="12" md="9" lg="9">
       <v-expansion-panels>
         <v-expansion-panel v-model="panel">

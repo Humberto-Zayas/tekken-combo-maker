@@ -4,7 +4,7 @@ export default {
       characters: [
         {
           name: 'Akuma',
-          color: 'red',
+          color: 'red darken-4',
           rage: [
             {
               name: 'Rage Art',

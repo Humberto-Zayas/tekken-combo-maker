@@ -154,7 +154,7 @@ export default {
         {
           icon: 'mdi-road-variant',
           title: 'Road Map',
-          to: '/inspire'
+          to: '/roadmap'
         }
       ],
       miniVariant: false,
