@@ -88,7 +88,7 @@
       </v-btn> -->
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-container class="px-5" fluid>
         <nuxt />
       </v-container>
     </v-main>

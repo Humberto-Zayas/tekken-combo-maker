@@ -40,7 +40,7 @@ export default {
             },
             {
               name: 'Rage Drive',
-              command: 'ff+1+2'
+              command: 'f,n,d,df+3+4'
             }
           ]
         },
@@ -50,11 +50,11 @@ export default {
           rage: [
             {
               name: 'Rage Art',
-              command: 'df+1+2'
+              command: 'd+1+2'
             },
             {
               name: 'Rage Drive',
-              command: 'ff+1+2'
+              command: 'f+2+3'
             }
           ]
         },
@@ -84,6 +84,43 @@ export default {
               name: 'Rage Drive',
               command: 'df+3+4'
             }
+          ],
+          comboEnders: [
+            {
+              text: 'command'
+            },
+            {
+              category: 'Wall Carry',
+              command: 'f+2, 1+2'
+            },
+            {
+              category: 'Wall Carry',
+              command: 'ff+3'
+            },
+            {
+              category: 'Wall Carry',
+              command: 'f+3'
+            },
+            {
+              category: 'Wall Carry',
+              command: 'df2:4'
+            },
+            {
+              category: 'Wall Break',
+              command: 'f+2, 1'
+            },
+            {
+              category: 'Floor Break',
+              command: 'f+2, 2'
+            },
+            {
+              category: 'Floor Break',
+              command: 'd+2'
+            },
+            {
+              category: 'Floor Break',
+              command: 'f+3+4'
+            }
           ]
         },
         {
@@ -92,11 +129,11 @@ export default {
           rage: [
             {
               name: 'Rage Art',
-              command: 'df+1+2'
+              command: 'b+1+2 (or AOP b+1+2)'
             },
             {
               name: 'Rage Drive',
-              command: 'ff+1+2'
+              command: 'RDS d+3,3+4'
             }
           ]
         },

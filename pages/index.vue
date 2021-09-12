@@ -15,8 +15,8 @@
               <!-- <v-card-title class="headline">
                 Create a combo
               </v-card-title> -->
-              <v-row no-gutters>
-                <v-col lg="5" md="5" sm="4" cols="12" style="padding: 10px 20px">
+              <v-row>
+                <v-col lg="5" md="5" sm="4" cols="12" class="px-10 py-20">
                   <v-select
                     v-model="value"
                     :items="characterSelect"
@@ -26,8 +26,10 @@
                     @change="updateBackground(value)"
                   />
                 </v-col>
+
                 <v-col
-                  lg="7"
+                  offset-lg="2"
+                  lg="5"
                   md="7"
                   sm="8"
                   cols="12"
@@ -202,6 +204,28 @@
             </v-expansion-panel>
           </v-expansion-panels>
         </template>
+
+        <!-- <template>
+          <v-expansion-panels :value="0">
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                Combo Enders
+              </v-expansion-panel-header>
+              <v-expansion-panel-content class="pa-0 ma-0">
+                <v-data-table
+
+                  :headers="characters[5].comboEnders.text"
+                  :items="characters[5].comboEnders"
+                  item-key="category"
+
+                  group-by="category"
+
+                  show-group-by
+                />
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </template> -->
       </v-card>
     </v-col>
   </v-row>
