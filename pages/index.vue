@@ -1,8 +1,8 @@
 <template>
   <v-row justify="center" align="top" class="pl-5 pr-5">
     <v-col cols="12" md="9" lg="9">
-      <v-expansion-panels>
-        <v-expansion-panel v-model="panel">
+      <v-expansion-panels :value="0">
+        <v-expansion-panel>
           <v-expansion-panel-header elevation-12>
             <v-card>
               <v-card-title class="headline">
@@ -166,7 +166,7 @@
           {{ value.replace('-', ' ') }}
         </v-card-title> -->
         <template>
-          <v-expansion-panels>
+          <v-expansion-panels :value="0">
             <v-expansion-panel>
               <v-expansion-panel-header>
                 Rage
