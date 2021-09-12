@@ -153,9 +153,9 @@
     </v-col>
     <v-col align="top" lg="3" md="3" cols="12">
       <v-card>
-        <v-list-item class="pa-0 ma-0 pink darken-2">
+        <v-list-item :class="characterColor" class="pa-0 ma-0">
           <v-list-item-avatar>
-            <v-img max-height="1000" contain src="/background/lucky chloe.png" />
+            <v-img max-height="1000" contain :src="'/background/'+ value + '.png'" />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="headline" v-text="value.replace('-', ' ')" />
@@ -187,7 +187,7 @@
                       </thead> -->
                       <tbody>
                         <tr
-                          v-for="item in luckychloeRage"
+                          v-for="item in characterRage"
                           :key="item.name"
                           class="pa-0 ma-0"
                         >

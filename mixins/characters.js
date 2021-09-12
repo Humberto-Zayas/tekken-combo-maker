@@ -4,6 +4,7 @@ export default {
       characters: [
         {
           name: 'Akuma',
+          color: 'red',
           rage: [
             {
               name: 'Rage Art',
@@ -17,6 +18,7 @@ export default {
         },
         {
           name: 'Asuka',
+          color: 'blue',
           rage: [
             {
               name: 'Rage Art',
@@ -30,6 +32,7 @@ export default {
         },
         {
           name: 'Josie',
+          color: 'amber darken-4',
           rage: [
             {
               name: 'Rage Art',
@@ -43,6 +46,7 @@ export default {
         },
         {
           name: 'Kunimitsu',
+          color: 'deep-purple',
           rage: [
             {
               name: 'Rage Art',
@@ -56,6 +60,7 @@ export default {
         },
         {
           name: 'Lee Chaolan',
+          color: 'deep-purple accent-4',
           rage: [
             {
               name: 'Rage Art',
@@ -69,6 +74,7 @@ export default {
         },
         {
           name: 'Lucky Chloe',
+          color: 'pink darken-2',
           rage: [
             {
               name: 'Rage Art',
@@ -82,6 +88,7 @@ export default {
         },
         {
           name: 'Xiaoyu',
+          color: 'orange',
           rage: [
             {
               name: 'Rage Art',
@@ -95,6 +102,7 @@ export default {
         },
         {
           name: 'Zafina',
+          color: 'indigo darken-4',
           rage: [
             {
               name: 'Rage Art',
@@ -238,7 +246,17 @@ export default {
     characterRage () {
       const x = this.characters
       const y = this.value
-      const z = _.map(x, item => ({ rage: item.rage }))
+      const current = _.findIndex(x, function (o) { return o.name == y })
+      const z = x[current].rage
+      // => 0
+      return z
+    },
+    characterColor () {
+      const x = this.characters
+      const y = this.value
+      const current = _.findIndex(x, function (o) { return o.name == y })
+      const z = x[current].color
+      // => 0
       return z
     }
   }
