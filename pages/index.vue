@@ -69,7 +69,7 @@
                         <img :src="j.src" @click="selected.push(j)">
                       </v-card>
                     </v-col>
-                    <v-col v-for="l in lee" v-if="value.includes('Lee-Chaolan')" :key="l.src">
+                    <v-col v-for="l in lee" v-if="value.includes('Lee Chaolan')" :key="l.src">
                       <v-card class="grey" outlined tile>
                         <img :src="l.src" @click="selected.push(l)">
                       </v-card>
