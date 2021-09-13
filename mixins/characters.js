@@ -4,6 +4,16 @@ export default {
       characters: [
         {
           name: 'Akuma',
+          tier: 'S-Tier',
+          types: [
+            [
+              'Meter', 'purple', 'darken-3'
+            ],
+            [
+              'Execution-Heavy', 'red', 'darken-3'
+            ]
+
+          ],
           color: 'red darken-4',
           rage: [
             {
@@ -14,10 +24,40 @@ export default {
               name: 'Super',
               command: 'qcf, qcf+1+2'
             }
+          ],
+          comboEnders: [
+
+            {
+              wallCarry: [
+                'j.d+3  f,f+2:1',
+                '2,qcb+4',
+                '2,dp+2'
+              ]
+            },
+            {
+              wallBreak: [
+                'wr+1',
+                'ff+2:1',
+                '1, 2'
+              ]
+            },
+            {
+              floorBreak: [
+                'df+1, 2',
+                'f+1+2',
+                'wr+3'
+              ]
+            }
           ]
         },
         {
           name: 'Asuka',
+          tier: 'A-Tier',
+          types: [
+            [
+              'Counter Hit', 'orange', 'darken-4'
+            ]
+          ],
           color: 'blue',
           rage: [
             {
@@ -28,10 +68,40 @@ export default {
               name: 'Rage Drive',
               command: 'ff+1+2'
             }
+          ],
+          comboEnders: [
+
+            {
+              wallCarry: [
+                'db+4, 2',
+                'df+3'
+              ]
+            },
+            {
+              wallBreak: [
+                'fff+3',
+                'f+1+2',
+                'ff+2, 1'
+              ]
+            },
+            {
+              floorBreak: [
+                'ff+1',
+                'd+2',
+                '2, 1, d+1+2'
+              ]
+            }
           ]
         },
         {
           name: 'Josie',
+          tier: 'B-Tier',
+          types: [
+            ['Poking',
+              'blue', 'darken-3'],
+            ['Stance',
+              'purple', 'darken-3']
+          ],
           color: 'amber darken-4',
           rage: [
             {
@@ -42,10 +112,47 @@ export default {
               name: 'Rage Drive',
               command: 'f,n,d,df+3+4'
             }
+          ],
+          comboEnders: [
+
+            {
+              wallCarry: [
+                'df+1, 2~F 1,3',
+                'f+2, 4',
+                'uf+3+4'
+
+              ]
+            },
+            {
+              wallBreak: [
+                'ff+3',
+                '3, f+3',
+                'uf+3+4'
+
+              ]
+            },
+            {
+              floorBreak: [
+                'f,n,d,df+1+2',
+                'd+2'
+              ]
+            }
           ]
         },
         {
           name: 'Kunimitsu',
+          tier: 'S-Tier',
+          types: [
+            ['Bullsh*t',
+              'brown',
+              'darken-5'],
+            ['Poking',
+              'blue',
+              'darken-3'],
+            ['Setup',
+              'indigo',
+              'darken-3']
+          ],
           color: 'deep-purple',
           rage: [
             {
@@ -56,10 +163,43 @@ export default {
               name: 'Rage Drive',
               command: 'f+2+3'
             }
+          ],
+          comboEnders: [
+
+            {
+              wallCarry: [
+                'df+1, 3',
+                'SET 1, 2',
+                'b+4'
+
+              ]
+            },
+            {
+              wallBreak: [
+                'qcf+1+2',
+                'SET 1, 2',
+                'fff+3'
+
+              ]
+            },
+            {
+              floorBreak: [
+                'd+1',
+                'df+3+4'
+
+              ]
+            }
           ]
         },
         {
           name: 'Lee Chaolan',
+          tier: 'A-Tier',
+          types: [
+            ['Stance',
+              'purple', 'darken-3'],
+            ['Execution-Heavy',
+              'red', 'darken-3']
+          ],
           color: 'deep-purple accent-4',
           rage: [
             {
@@ -70,10 +210,42 @@ export default {
               name: 'Rage Drive',
               command: 'df+3+4'
             }
+          ],
+          comboEnders: [
+
+            {
+              wallCarry: [
+                'df+3, 2 3',
+                'f+2, 1',
+                'd+2'
+
+              ]
+            },
+            {
+              wallBreak: [
+                'ff+3',
+                'f+2, 1'
+
+              ]
+            },
+            {
+              floorBreak: [
+                'f+3+4',
+                'f+4, 3'
+
+              ]
+            }
           ]
         },
         {
           name: 'Lucky Chloe',
+          tier: 'B-Tier',
+          types: [
+            ['Poking',
+              'blue', 'darken-3'],
+            ['Hybrid',
+              'green', 'darken-3']
+          ],
           color: 'pink darken-2',
           rage: [
             {
@@ -86,45 +258,46 @@ export default {
             }
           ],
           comboEnders: [
+
             {
-              text: 'command'
+              wallCarry: [
+                'f+2, 1+2',
+                'ff+3',
+                'f+3',
+                'df+2:4',
+                'f+2, 1+2',
+                'f+2, 1'
+              ]
             },
             {
-              category: 'Wall Carry',
-              command: 'f+2, 1+2'
+              wallBreak: [
+                'f+2, 1+2',
+                'f+2, 1',
+                'f+1+2',
+                'b+3',
+                'fff+3+4'
+              ]
             },
             {
-              category: 'Wall Carry',
-              command: 'ff+3'
-            },
-            {
-              category: 'Wall Carry',
-              command: 'f+3'
-            },
-            {
-              category: 'Wall Carry',
-              command: 'df2:4'
-            },
-            {
-              category: 'Wall Break',
-              command: 'f+2, 1'
-            },
-            {
-              category: 'Floor Break',
-              command: 'f+2, 2'
-            },
-            {
-              category: 'Floor Break',
-              command: 'd+2'
-            },
-            {
-              category: 'Floor Break',
-              command: 'f+3+4'
+              floorBreak: [
+                'f+2, 2',
+                'd+2',
+                'b+2',
+                'f+3+4',
+                'u+3+4'
+              ]
             }
           ]
         },
         {
           name: 'Xiaoyu',
+          types: [
+            ['Setup',
+              'indigo', 'darken-3'],
+            ['Stance',
+              'purple', 'darken-3']
+          ],
+          tier: 'B-Tier',
           color: 'orange',
           rage: [
             {
@@ -135,10 +308,43 @@ export default {
               name: 'Rage Drive',
               command: 'RDS d+3,3+4'
             }
+          ],
+          comboEnders: [
+
+            {
+              wallCarry: [
+                'f+2, 1',
+                'ff+2, 1'
+
+              ]
+            },
+            {
+              wallBreak: [
+                'db+1',
+                'AOP 2, 1',
+                '1, 2 ,1'
+
+              ]
+            },
+            {
+              floorBreak: [
+                '4~3',
+                'd+1',
+                'ff+1+2, 1+2'
+
+              ]
+            }
           ]
         },
         {
           name: 'Zafina',
+          tier: 'A-Tier',
+          types: [
+            ['Stance',
+              'purple', 'darken-3'],
+            ['Movement-Heavy',
+              'pink', 'darken-3']
+          ],
           color: 'indigo darken-4',
           rage: [
             {
@@ -148,6 +354,31 @@ export default {
             {
               name: 'Rage Drive',
               command: 'f+2+3'
+            }
+          ],
+          comboEnders: [
+
+            {
+              wallCarry: [
+                'ff+3+4',
+                'df+3, 4',
+                'df+1, 4'
+              ]
+            },
+            {
+              wallBreak: [
+                'f+1+2',
+                'df+1, 2, 1',
+                'f+2, 3, 4'
+              ]
+            },
+            {
+              floorBreak: [
+                'b+3',
+                'df+4, 1',
+                'd+2'
+
+              ]
             }
           ]
         }
@@ -284,7 +515,7 @@ export default {
       const x = this.characters
       const y = this.value
       const current = _.findIndex(x, function (o) { return o.name == y })
-      const z = x[current].rage
+      const z = x[current]
       // => 0
       return z
     },

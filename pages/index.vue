@@ -1,30 +1,130 @@
 <template>
   <v-row justify="center" align="top" class="pl-5 pr-5">
     <v-col cols="12" md="9" lg="9">
-      <v-expansion-panels :value="0">
-        <v-expansion-panel>
-          <v-expansion-panel-header elevation-12>
-            <v-card>
-              <v-card-title class="headline">
-                Create a combo
-              </v-card-title>
-            </v-card>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-card>
-              <!-- <v-card-title class="headline">
-                Create a combo
-              </v-card-title> -->
-              <v-row>
-                <v-col lg="5" md="5" sm="4" cols="12" class="px-10 py-20">
+      <v-card>
+        <!-- <v-row
+          align="end"
+        >
+          <v-col lg="2">
+            <v-img :src="'/background/' + value + '.png'" />
+          </v-col>
+
+          <v-col lg="1">
+            <v-chip
+
+              color="orange darken-4"
+              class="mb-2"
+              label
+            >
+              B-Tier
+            </v-chip>
+
+            <v-chip
+
+              color="red darken-4"
+              label
+            >
+              Hybrid
+            </v-chip>
+          </v-col>
+          <v-col
+            offset-lg="6"
+            lg="3"
+            md="3"
+            sm="4"
+            cols="12"
+            class="px-10 py-20"
+          >
+            <v-select
+              v-model="value"
+              :items="characterSelect"
+              attach
+              chips
+              label="Characters"
+              @change="updateBackground(value)"
+            />
+          </v-col>
+        </v-row> -->
+
+        <template>
+          <v-card
+            style="z-index: 1"
+            class="mx-auto"
+          >
+            <v-img
+              position="top center"
+              class="white--text align-end"
+              height="300px"
+              style="overflow: visible;"
+              :src="'/background/' + value + '.png'"
+            >
+              <v-row
+                align="end"
+              >
+                <v-col lg="2" md="0" sm="0" cols="12">
+                  <v-img class="d-none d-lg-flex d-xl-flex" :src="'/background/' + value + '.png'" />
+                </v-col>
+
+                <v-col class="px-10 d-flex flex-column" lg="2" md="3" sm="3" cols="12">
+                  <v-chip
+                    v-for="([title, color, variation], i) in characterRage.types"
+
+                    :key="i"
+                    :color="color + ' ' + variation"
+                    class="mb-2"
+                    style="width: fit-content"
+                    label
+                  >
+                    {{ title }}
+                  </v-chip>
+
+                  <!-- <v-chip
+
+                    color="red darken-4"
+                    label
+                  >
+                    Hybrid
+                  </v-chip> -->
+                </v-col>
+                <v-col
+                  offset-lg="5"
+                  offset-md="4"
+                  offset-sm="3"
+                  lg="3"
+                  md="5"
+                  sm="6"
+                  cols="12"
+                  class="px-10 py-20"
+                >
                   <v-select
                     v-model="value"
+                    class="px-2 pt-6"
+                    style="background-color: rgba(0,0,0, 0.5); border-radius: 10px"
                     :items="characterSelect"
                     attach
                     chips
-                    label="Characters"
+                    label="Select a Character"
                     @change="updateBackground(value)"
                   />
+                </v-col>
+              </v-row>
+            </v-img>
+          </v-card>
+        </template>
+        <v-list>
+          <v-list-group :value="true">
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title class="headline">
+                  <v-icon>mdi-gamepad-circle-down</v-icon>
+                  &nbsp;&nbsp;Create a Combo
+                </v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-card>
+              <v-row class="mb-4 px-0">
+                <v-col lg="5" md="5" sm="4" cols="12" class="px-10 py-20">
+                  <h3>Select Combo Notations Below</h3>
                 </v-col>
 
                 <v-col
@@ -110,9 +210,6 @@
                                 />
                               </v-col>
                             </v-row>
-                          <!-- <v-row>
-                          {{command}}
-                      </v-row> -->
                           </v-container>
                         </v-form>
                       </template>
@@ -149,9 +246,9 @@
                 </v-container>
               </template>
             </v-card>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
+          </v-list-group>
+        </v-list>
+      </v-card>
     </v-col>
     <v-col align="top" lg="3" md="3" cols="12">
       <v-card>
@@ -167,42 +264,127 @@
         <!-- <v-card-title class="headline">
           {{ value.replace('-', ' ') }}
         </v-card-title> -->
+
         <template>
-          <v-expansion-panels :value="0">
-            <v-expansion-panel>
-              <v-expansion-panel-header>
-                Rage
-              </v-expansion-panel-header>
-              <v-expansion-panel-content class="pa-0 ma-0">
-                <template>
-                  <v-simple-table class="pa-0 ma-0">
-                    <template v-slot:default class="pa-0 ma-0">
-                      <!-- <thead>
-                        <tr>
-                          <th class="text-left">
-                            Rage
-                          </th>
-                          <th class="text-left">
-                            Command
-                          </th>
-                        </tr>
-                      </thead> -->
-                      <tbody>
-                        <tr
-                          v-for="item in characterRage"
-                          :key="item.name"
-                          class="pa-0 ma-0"
-                        >
-                          <td>{{ item.name }}</td>
-                          <td>{{ item.command }}</td>
-                        </tr>
-                      </tbody>
-                    </template>
-                  </v-simple-table>
-                </template>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
+          <v-list>
+            <v-list-group
+              no-action
+            >
+              <template v-slot:activator>
+                <v-icon>mdi-emoticon-angry</v-icon>
+                <v-list-item-content>
+                  <v-list-item-title>&nbsp;&nbsp;Rage</v-list-item-title>
+                </v-list-item-content>
+              </template>
+
+              <template>
+                <v-simple-table class="px-3">
+                  <template v-slot:default>
+                    <tbody>
+                      <tr
+                        v-for="item in characterRage.rage"
+                        :key="item.name"
+                      >
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.command }}</td>
+                      </tr>
+                    </tbody>
+                  </template>
+                </v-simple-table>
+              </template>
+            </v-list-group>
+          </v-list>
+        </template>
+
+        <template>
+          <v-list>
+            <v-list-group
+              no-action
+            >
+              <template v-slot:activator>
+                <v-icon>mdi-truck-delivery</v-icon>
+                <v-list-item-content>
+                  <v-list-item-title>&nbsp;&nbsp;Wall Carry</v-list-item-title>
+                </v-list-item-content>
+              </template>
+
+              <template>
+                <v-simple-table class="px-3">
+                  <template v-slot:default>
+                    <tbody>
+                      <tr
+                        v-for="(i) in characterRage.comboEnders[0].wallCarry"
+                        :key="i"
+                      >
+                        <td>{{ i }}</td>
+                      </tr>
+                    </tbody>
+                  </template>
+                </v-simple-table>
+              </template>
+            </v-list-group>
+          </v-list>
+        </template>
+
+        <template>
+          <v-list>
+            <v-list-group
+              no-action
+            >
+              <template v-slot:activator>
+                <v-icon>mdi-wall</v-icon>
+
+                <v-list-item-content>
+                  <v-list-item-title>&nbsp;&nbsp;Wall Break</v-list-item-title>
+                </v-list-item-content>
+              </template>
+
+              <template>
+                <v-simple-table class="px-3">
+                  <template v-slot:default>
+                    <tbody>
+                      <tr
+                        v-for="(i) in characterRage.comboEnders[1].wallBreak"
+                        :key="i"
+                      >
+                        <td>{{ i }}</td>
+                      </tr>
+                    </tbody>
+                  </template>
+                </v-simple-table>
+              </template>
+            </v-list-group>
+          </v-list>
+        </template>
+
+        <template>
+          <v-list>
+            <v-list-group
+              no-action
+            >
+              <template v-slot:activator>
+                <v-icon>mdi-stairs-down</v-icon>
+                <v-list-item-content>
+                  <v-list-item-title>&nbsp;&nbsp;Floor Break</v-list-item-title>
+                </v-list-item-content>
+              </template>
+
+              <template>
+                <v-simple-table class="px-3">
+                  <template v-slot:default>
+                    <tbody>
+                      <tr
+                        v-for="(i) in characterRage.comboEnders[2].floorBreak"
+                        :key="i"
+                      >
+                        <td>{{ i }}</td>
+                      </tr>
+                    </tbody>
+                  </template>
+                </v-simple-table>
+              </template>
+            </v-list-group>
+          </v-list>
         </template>
 
         <!-- <template>
@@ -260,6 +442,16 @@ export default {
   mixins: [characters],
   data () {
     return {
+      admins: [
+        ['Management', 'mdi-account-multiple-outline'],
+        ['Settings', 'mdi-cog-outline']
+      ],
+      cruds: [
+        ['Create', 'mdi-plus-outline'],
+        ['Read', 'mdi-file-outline'],
+        ['Update', 'mdi-update'],
+        ['Delete', 'mdi-delete']
+      ],
       value: 'Lucky Chloe',
       show: false,
       panel: [0],

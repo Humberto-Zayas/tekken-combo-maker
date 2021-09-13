@@ -26,11 +26,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
+    <!-- <v-app-bar
       :src="'/background/' + currentCharacter + '.png'"
       height="200"
       prominent
-      fade-img-on-scroll
+
       :clipped-left="clipped"
       fixed
       app
@@ -58,6 +58,25 @@
           </v-img>
         </transition>
       </template>
+      <v-app-bar-nav-icon class="align-self-end" @click.stop="drawer = !drawer" />
+      <v-btn
+        class="align-self-end"
+        icon
+        @click.stop="miniVariant = !miniVariant"
+      >
+        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
+      </v-btn>
+
+      <v-toolbar-title v-text="title" />
+      <v-spacer />
+
+    </v-app-bar> -->
+    <v-app-bar
+
+      :clipped-left="clipped"
+      fixed
+      app
+    >
       <v-app-bar-nav-icon class="align-self-end" @click.stop="drawer = !drawer" />
       <v-btn
         class="align-self-end"
